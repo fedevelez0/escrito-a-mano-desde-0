@@ -7,7 +7,7 @@ st.title('✨ Tablero para Dibujo ✨')
 
 # Sidebar settings
 st.sidebar.title("🎨 Propiedades del Tablero")
-drawing_mode = st.sidebar.selectbox("Herramienta de Dibujo", ["freedraw", "line", "rectangle", "circle", "polygon"])
+drawing_mode = st.sidebar.selectbox("Herramienta de Dibujo", ["freedraw", "line", "rect", "circle", "polygon"])
 stroke_width = st.sidebar.slider('Selecciona el ancho de línea', 1, 30, 15)
 stroke_color = st.sidebar.color_picker('Color de trazo', '#FF6347')  # Color vibrante (Tomato)
 bg_color = '#1E1E1E'       # Fondo oscuro

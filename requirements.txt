@@ -1,6 +1,3 @@
 streamlit 
-tensorflow 
-matplotlib 
 streamlit-drawable-canvas 
-matplotlip
-python_version == 3.9
+

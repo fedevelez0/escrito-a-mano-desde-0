@@ -7,9 +7,9 @@ st.title('✨ Tablero para Dibujo ✨')
 
 # Sidebar settings
 st.sidebar.title("🎨 Propiedades del Tablero")
-drawing_mode = st.sidebar.selectbox("Herramienta de Dibujo", ["freedraw"])
+drawing_mode = st.sidebar.selectbox("Herramienta de Dibujo", ["freedraw", "line", "rectangle", "circle", "polygon"])
 stroke_width = st.sidebar.slider('Selecciona el ancho de línea', 1, 30, 15)
-stroke_color = '#FF6347'  # Color vibrante (Tomato)
+stroke_color = st.sidebar.color_picker('Color de trazo', '#FF6347')  # Color vibrante (Tomato)
 bg_color = '#1E1E1E'       # Fondo oscuro
 
 # Create canvas
@@ -18,17 +18,8 @@ canvas_result = st_canvas(
     stroke_width=stroke_width,
     stroke_color=stroke_color,
     background_color=bg_color,
-    height=300,  # Aumentado el tamaño del canvas
-    width=300,
+    height=700,  # Aumentado el tamaño del canvas
+    width=600,
+    drawing_mode=drawing_mode,  # Establecer el modo de dibujo seleccionado
     key="canvas",
 )
-
-# Add buttons for saving and clearing
-col1, col2 = st.columns(2)
-with col1:
-    if st.button('💾 Guardar'):
-        st.write("Imagen guardada.")
-with col2:
-    if st.button('🗑️ Borrar'):
-        st.session_state.canvas_data = None
-        st.experimental_rerun()
